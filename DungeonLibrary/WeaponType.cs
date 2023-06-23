@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    //make it public, make it aan enum
+    //make it public, make it an enum
     public enum WeaponType
     {
-        Sword,
-        Hammer,
-        Pitchfork,
-        Lazergun
-
+        Sword
     }
 }

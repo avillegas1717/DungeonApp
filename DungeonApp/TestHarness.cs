@@ -12,35 +12,39 @@ namespace DungeonApp
         static void Main(string[] args)
         {
             //test your Character and your Weapon creation
-            #region Character Testing
-            //object initialization syntax using the Default CTOR
-            Character c1 = new()
-            {
-                Name = "Gandalf",
-                HitChance = 75,
-                Block = 15,
-                MaxLife = 120,
-                Life = 120 //MaxLife MUST be set before Life
-            };
-            //testing the ToString()
-            Console.WriteLine(c1);
-            //Using the FQ CTOR
-            Character c2 = new("Storm Trooper", 35, 5, 130, 70);//Life(70) and MaxLife(130) are explicitly set to different values here.
-            Console.WriteLine(c2);
-
-            //Using the full health CTOR overload
-            Character c3 = new("Mario Mario", 60, 20, 200);//Here, MaxLife is set to 200, and Life will default to whatever MaxLife is.
-            Console.WriteLine(c3);
-
-
-            #endregion
 
             #region Weapon Testing
             Console.Write("Equipped Weapon: ");
-            //Weapon w1 = new Weapon("Wooden Stick", 1, 5, 0, false);
-            //Console.WriteLine(w1);
+            Weapon w1 = new Weapon("Wooden Stick", 1, 5, 5, false, WeaponType.Sword);
+            Console.WriteLine(w1.ToString());
             #endregion
 
+            #region Player Testing
+            Console.WriteLine("Player: ");
+            Console.Write("What is your name? ");
+            string name = "The Big One";
+
+            //Block3.Enums / Block3.ClassicMonster enum for example on how to show the user a list of an enum and let them pick one.
+            //Show them the list
+            //Ask them what race they want
+            Race race = (Race)2;//pretend like they picked the number 1
+
+            //I recommend creating a method in your Weapon.cs class to show them a list of weapons and let them pick one. "return" that weapon to the main program and use it in the Player ctor. 
+            Player p1 = new Player(name, race, w1);
+            Console.WriteLine(p1);
+
+            Console.WriteLine("Calc Damage: " + p1.CalcDamage());
+            Console.WriteLine("Calc Block: " + p1.CalcBlock());
+            Console.WriteLine("Calc Hit Chance: " + p1.CalcHitChance());
+            #endregion
+
+            #region Monster testing
+            Monster m1 = Monster.GetMonster();
+            Console.WriteLine(m1);
+
+            m1.Life += 10;
+            Console.WriteLine(m1);
+            #endregion
         }
-    }
-}
+    }//end class
+}//end namespce
