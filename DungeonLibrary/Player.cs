@@ -19,9 +19,9 @@ namespace DungeonLibrary
         public int Score { get; set; }
 
         //CTORs - Collect
-        public Player(string name, /*int hitChance, int block, int maxLife,*/ Race playerRace, Weapon equippedWeapon)
+        public Player(string name, /*int hitChance, int block, int maxLife,*/ Race playerRace, Weapon equippedWeapon) 
             : base(name, 70, 5, 40)//hitchance, block, maxlife/life
-        {
+        {            
             PlayerRace = playerRace;
             EquippedWeapon = equippedWeapon;
 
@@ -83,8 +83,18 @@ namespace DungeonLibrary
         {
             //throw new NotImplementedException();
             Random rand = new Random();
+            //.Next() 0 to int.MaxValue
+            //.Next(int value) 0 to value - 1
+            //.Next(int value1, int value2) value1 to value2 - 1
+            int damage = rand.Next(EquippedWeapon.MinDamage, EquippedWeapon.MaxDamage + 1);
+            //Upper bound is exclusive, so we add 1 to the max damage.
+            return damage;
         }
         //CalcHitChance() override -> return the HitChance + EquippedWeapon's BonusHitChance property.
-    }
-}
-}
+        public override int CalcHitChance()
+        {
+            int chance = HitChance + EquippedWeapon.BonusHitChance;
+            return chance;
+        }
+    }//end class
+}//end namespace

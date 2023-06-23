@@ -1,13 +1,16 @@
 ﻿namespace DungeonLibrary
 {
-    public class Character
+    //The abstract keyword denotes the beginning of an inheritance chain. This is an "incomplete implementation" and MUST be inherited. You CANNOT create/instantiate an abstract object.
+    public abstract class Character
     {
+        //Fields
         private string _name;
         private int _hitChance;
         private int _maxLife;
-        private int _life;
         private int _block;
+        private int _life;
 
+        //Properties
         public string Name
         {
             get { return _name; }
@@ -35,6 +38,7 @@
             set { _life = value <= MaxLife ? value : MaxLife; } //always reference other properties, not fields, in case there are business rules in place.
         }
 
+        //Constructors
         public Character(string name, int hitChance, int block, int maxLife, int life)
         {
             Name = name;
@@ -62,10 +66,14 @@
         }
 
         //In combat, the attacker's HitChance minus the defender's Block will determine whether the attack hits.        
-        public int CalcBlock() { return Block; }
-        public int CalcHitChance() { return HitChance; }
+        public virtual int CalcBlock() { return Block; }
+        public virtual int CalcHitChance() { return HitChance; }
         //If an attacker lands a hit, we will call the attacker's CalcDamage() to determine how much damage to do.
-        public int CalcDamage() { return 0; }
+        //An abstract method is an "incomplete implementation." This method MUST be overridden in a child class for the implementation to be complete.
+        //Abstract methods can only exist in abstract classes.
+        public abstract int CalcDamage();
+        //virtual : possible to override, not required.
+        //abstract : REQUIRED to be overridden.
 
         public override string ToString()
         {
@@ -73,7 +81,7 @@
             return $"---- {Name} ----\n" +
                    $"Life: {Life} / {MaxLife}\n" +
                    $"Hit Chance: {HitChance}%\n" +
-                   $"Block: {Block}%\n";
+                   $"Block: {Block}%";
         }
-    }
-}
+    }//end class
+}//end namespace

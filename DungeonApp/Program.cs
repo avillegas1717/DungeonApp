@@ -1,4 +1,6 @@
-﻿namespace DungeonApp
+﻿using DungeonLibrary;
+
+namespace DungeonApp
 {
     internal class Program
     {
@@ -10,7 +12,16 @@
             #endregion
 
             #region Player Creation
-            //TODO Player Creation, after we've learned how to create custom Datatypes.
+            //Player Creation, after we've learned how to create custom Datatypes.
+            //Reference the notes in the TestHarness for some ideas of how to expand player creation.
+
+            //Potential expansion - Let the user choose from a list of pre-made weapons.
+            Weapon sword = new("Lightsaber", 1, 8, 10, true, WeaponType.Sword);
+
+            //Potential expansion - Let the user choose the name and race.
+            Player player = new("Leeroy Jenkins", Race.Human, sword);
+
+            player.Score = 0;//initialized to zero by default. This just adds readability.
             #endregion
             
             //Outer Loop
@@ -23,6 +34,8 @@
                 //TODONE Generate a room - random string description
                 Console.WriteLine("Room #" + GetRoom());//Room # is temporary until you add room descriptions.
                 //TODO Generate a Monster (custom datatype)
+                Monster monster = Monster.GetMonster();
+
                 #endregion
 
                 #region Encounter Loop                
@@ -84,6 +97,7 @@
 
             #region Exit
             //TODO output the final score
+            //Console.WriteLine();
             #endregion
         }//End Main()
 
