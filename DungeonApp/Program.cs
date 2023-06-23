@@ -57,23 +57,25 @@ namespace DungeonApp
                     {
                         case '1':
                             Console.WriteLine("Attack!");
-                            //TODO Combat functionality
+                            reload = Combat.DoBattle(player, monster);
                             break;
                         case '2':
                             Console.WriteLine("Run Away!!");
-                            //TODO Give the monster a free attack chance
-
+                            //Give the monster a free attack chance
+                            Combat.DoAttack(monster, player);
                             //Leave the inner loop (reload the room) and get a new room & monster.
                             reload = true;
                             break;
                         case '3':
                             Console.WriteLine("Player info: ");
-                            //TODO print player details to the screen
+                            //print player details to the screen
+                            Console.WriteLine(player);
                             break;
 
                         case '4':
                             Console.WriteLine("Monster info: ");
-                            //TODO print monster details to the screen
+                            //print monster details to the screen
+                            Console.WriteLine(monster);
                             break;
 
                         case '5':
