@@ -56,10 +56,10 @@ namespace DungeonLibrary
         public static Monster GetMonster()
         {
             //TODO Come back to replace these monsters with your own monster subtypes later.
-            Monster m1 = new("First Monster", 50, 20, 25, 8, 2, "This is a test monster");
-            Monster m2 = new("Second Monster", 70, 20, 25, 8, 2, "This is a test monster");
-            Monster m3 = new("Third Monster", 50, 20, 25, 8, 2, "This is a test monster");
-            Monster m4 = new("Fourth Monster", 45, 25, 40, 12, 5, "This is a test monster");
+            Monster m1 = new("Rad Randy the Raccoon", 50, 20, 25, 8, 2, "He befriends humans with pets. His favorite food is pizza. And ");
+            Monster m2 = new("Sassy Sally the Squirrel", 70, 20, 25, 8, 2, "This is a test monster");
+            Monster m3 = new("Mad Mike the Mole", 50, 20, 25, 8, 2, "This is a test monster");
+            Monster m4 = new("Ruby & Raul the Rats", 45, 25, 40, 12, 5, "This is a test monster");
 
             List<Monster> monsters = new()
             {
