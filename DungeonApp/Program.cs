@@ -8,7 +8,19 @@ namespace DungeonApp
         {
             #region Introduction
             //TODO Intro
-            Console.WriteLine("Hello Adventurer! Welcome to the Dungeon of Doom!");
+            Console.WriteLine("Welcome to the whimsical world of \n" +
+                "Tiny Tails: Adventures in Tangerine Town! ");
+            #endregion
+
+            #region  Startup Menu
+            Console.WriteLine("\nPlease choose an option:\n" +
+                        "1) Read Story\n" +
+                        "2) Customize Character\n" +
+                        "3) Choose Room\n" +
+                        "4) Exit\n");
+
+            //Console.Clear();
+
             #endregion
 
             #region Player Creation
@@ -23,7 +35,7 @@ namespace DungeonApp
 
             player.Score = 0;//initialized to zero by default. This just adds readability.
             #endregion
-            
+
             //Outer Loop
             bool quit = false;
             do
@@ -32,7 +44,7 @@ namespace DungeonApp
                 #region Monster and room generation
                 //We need to generate a new monster and a new room for each encounter.                
                 //TODONE Generate a room - random string description
-                Console.WriteLine("Room #" + GetRoom());//Room # is temporary until you add room descriptions.
+                Console.WriteLine("Room: " + GetRoom());//Room # is temporary until you add room descriptions.
                 //TODO Generate a Monster (custom datatype)
                 Monster monster = Monster.GetMonster();
 
@@ -107,11 +119,11 @@ namespace DungeonApp
         {
             string[] rooms =
             {
-                "1", 
-                "2", 
-                "3", 
-                "4", 
-                "5"
+                "Attic",
+                "Kitchen",
+                "Child's Bedroom",
+                "Basement",
+
             };
 
             Random rand = new Random();
