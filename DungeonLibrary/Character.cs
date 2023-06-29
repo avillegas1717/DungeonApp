@@ -1,6 +1,7 @@
 ﻿namespace DungeonLibrary
 {
-    //The abstract keyword denotes the beginning of an inheritance chain. This is an "incomplete implementation" and MUST be inherited. You CANNOT create/instantiate an abstract object.
+    //The abstract keyword denotes the beginning of an inheritance chain. This is an "incomplete implementation" and MUST be inherited.
+    //You CANNOT create/instantiate an abstract object.
     public abstract class Character
     {
         //Fields
