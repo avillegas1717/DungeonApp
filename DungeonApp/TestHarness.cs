@@ -22,7 +22,7 @@ namespace DungeonApp
             #region Player Testing
             Console.WriteLine("Player: ");
             Console.Write("What is your name? ");
-            string name = "The Big One";
+            string name = "Inigo Montoya";
 
             //Block3.Enums / Block3.ClassicMonster enum for example on how to show the user a list of an enum and let them pick one.
             //Show them the list
