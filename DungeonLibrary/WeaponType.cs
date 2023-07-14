@@ -9,6 +9,16 @@ namespace DungeonLibrary
     //make it public, make it an enum
     public enum WeaponType
     {
-        Sword
+        //TODO finalize weapons types
+        
+        GuitarPickThrowingStars,
+        YoYo,
+        Slinky, 
+        Toothpicks,
+
+
+
+
+
     }
 }

@@ -15,14 +15,14 @@ namespace DungeonApp
 
             #region Weapon Testing
             Console.Write("Equipped Weapon: ");
-            Weapon w1 = new Weapon("Wooden Stick", 1, 5, 5, false, WeaponType.Sword);
+            Weapon w1 = new Weapon("Slinky", 1, 5, 5, false, WeaponType.Slinky);
             Console.WriteLine(w1.ToString());
             #endregion
 
             #region Player Testing
             Console.WriteLine("Player: ");
             Console.Write("What is your name? ");
-            string name = "Inigo Montoya";
+            string name = "Rad Randy the Raccoon";
 
             //Block3.Enums / Block3.ClassicMonster enum for example on how to show the user a list of an enum and let them pick one.
             //Show them the list
@@ -45,6 +45,7 @@ namespace DungeonApp
             m1.Life += 10;
             Console.WriteLine(m1);
             #endregion
+            
         }
     }//end class
 }//end namespce
