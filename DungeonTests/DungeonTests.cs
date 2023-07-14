@@ -5,10 +5,9 @@ namespace DungeonTests
         [Fact]
         public void Test1()
         {
-            Console.WriteLine("Player: ");
-            Console.Write("What is your name? ");
-            string name = "Inigo Montoya";
-
+            Console.Write("Equipped Weapon: ");
+            Weapon w1 = new Weapon("Wooden Stick", 1, 5, 5, false, WeaponType.Sword);
+            Console.WriteLine(w1.ToString());
         }
     }
 }
