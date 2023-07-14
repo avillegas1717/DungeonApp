@@ -24,13 +24,14 @@ namespace DungeonLibrary
 
         public string Description { get; set; }
 
-        public Monster(string name, int hitChance, int block, int maxLife, int maxDamage, int minDamage, string description) 
+        public Monster(string name, int hitChance, int block, int maxLife, int maxDamage, int minDamage, string description)
             : base(name, hitChance, block, maxLife)
         {
             MaxDamage = maxDamage;
             MinDamage = minDamage;
             Description = description;
         }
+       
         public Monster()
         {
             //added so we can create "default" monster subtypes
@@ -55,11 +56,14 @@ namespace DungeonLibrary
 
         public static Monster GetMonster()
         {
-            //TODO Come back to replace these monsters with your own monster subtypes later.
-            Monster m1 = new("Rad Randy the Raccoon", 50, 20, 25, 8, 2, "He befriends humans with pets. His favorite food is pizza. And ");
-            Monster m2 = new("Sassy Sally the Squirrel", 70, 20, 25, 8, 2, "This is a test monster");
-            Monster m3 = new("Mad Mike the Mole", 50, 20, 25, 8, 2, "This is a test monster");
-            Monster m4 = new("Ruby & Raul the Rats", 45, 25, 40, 12, 5, "This is a test monster");
+            //Come back to replace these monsters with your own monster subtypes later.
+
+
+            Monster m1 = new("Rockin' Randy the Raccoon", 50, 20, 25, 8, 2, "Resourceful rummaging master. His favorite food is pizza.");
+            Monster m2 = new("Sassy Sally the Squirrel", 70, 20, 25, 8, 2, "Smart mouthed and stealthy. Her favorite food is popcorn");
+            Monster m3 = new("Mad Mike the Mole", 50, 20, 25, 8, 2, "Mighty and mischevious. His favorite food is Spicy Chicken Burritos");
+            Monster m4 = new("Rad Ruby & Raul the Rats", 45, 25, 40, 12, 5, "Rambunctious and relentless. Their favorites foods are raspberries and blueberries");
+
 
             List<Monster> monsters = new()
             {

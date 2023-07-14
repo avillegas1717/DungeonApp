@@ -25,49 +25,48 @@ namespace DungeonLibrary
             PlayerRace = playerRace;
             EquippedWeapon = equippedWeapon;
 
-            #region Potential Expansion: Racial Bonuses
-            //build a switch based on the PlayerRace. Apply buffs/debuffs depending on which race they picked.
-            switch (PlayerRace)
-            {
-                case Race.Human:
-                    HitChance += 5;
-                    Life -= 3;
-                    MaxLife -= 3;
-                    break;
-                case Race.Tiefling:
-                    break;
-                case Race.Dwarf:
-                    break;
-                case Race.Giant:
-                    break;
-                case Race.Orc:
-                    break;
-                case Race.Cyborg:
-                    break;
-                default:
-                    break;
-            }
+            //#region Potential Expansion: Racial Bonuses
+            ////build a switch based on the PlayerRace. Apply buffs/debuffs depending on which race they picked.
+            //switch (PlayerRace)
+            //{
+            //    case Race.Human:
+            //        HitChance += 5;
+            //        Life -= 3;
+            //        MaxLife -= 3;
+            //        break;
+            //    case Race.Tiefling:
+            //        break;
+            //    case Race.Dwarf:
+            //        break;
+            //    case Race.Giant:
+            //        break;
+            //    case Race.Orc:
+            //        break;
+            //    case Race.Cyborg:
+            //        break;
+            //    default:
+            //        break;
+            //}
 
-            #endregion
+            //#endregion
         }//End CTOR
 
         //METHODS - Monkeys
         private static string GetRaceDesc(Race race)
         {
+
+            
             switch (race)
             {
-                case Race.Human:
-                    return "Human";
-                case Race.Tiefling:
-                    return "Tiefling";
-                case Race.Dwarf:
-                    return "Dwarf";
-                case Race.Giant:
-                    return "Giant";
-                case Race.Orc:
-                    return "Orc";
-                case Race.Cyborg:
-                    return "Cyborg";
+                case Race.HumanChild:
+                    return "Human Child: a pint-sized adventurer with boundless curiosity and energy";
+                case Race.HumanAdult:
+                    return "Human Adult: a creature of towering responsibility and dubious wisdom";
+                case Race.Cat:
+                    return "Cat: a creature of mystery and aloofness, armed with sharp claws and a mischievous spirit";
+                case Race.Dog:
+                    return "Dog: a furry bundle of loyalty, energy, and an insatiable appetite for treats";
+                
                 default:
                     return "";
             }

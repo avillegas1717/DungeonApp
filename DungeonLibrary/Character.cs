@@ -1,7 +1,10 @@
-﻿namespace DungeonLibrary
+﻿using System.Numerics;
+
+namespace DungeonLibrary
 {
-    //The abstract keyword denotes the beginning of an inheritance chain. This is an "incomplete implementation" and MUST be inherited. You CANNOT create/instantiate an abstract object.
-    public abstract class Character
+    //The abstract keyword denotes the beginning of an inheritance chain. This is an "incomplete implementation" and MUST be inherited.
+    //You CANNOT create/instantiate an abstract object.
+    public abstract class Character 
     {
         //Fields
         private string _name;
@@ -63,6 +66,10 @@
             //added for object initialization syntax, or for assigning default values.
             //Default Constructor functionality is not inherited by child classes (we'll talk about inheritance a bit later)
             //NOTE: If you use object initialization syntax, you must remember to set MaxLife first.
+
+            //Player player = new Player("JohnDoe");
+            
+
         }
 
         //In combat, the attacker's HitChance minus the defender's Block will determine whether the attack hits.        
