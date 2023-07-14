@@ -93,7 +93,7 @@ namespace DungeonApp
                             break;
 
                         default:
-                            Console.WriteLine("Do you think this is a game?? Quit playing around!");
+                            Console.WriteLine("Do you think this is a game?? Quit playing around!");//TODO Change verbage & figure out what this is linked to. 
                             break;
                     }//end switch
                     #endregion
