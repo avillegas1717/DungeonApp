@@ -66,6 +66,9 @@ namespace DungeonApp
                         case '1':
                             Console.WriteLine("Attack!");
                             reload = Combat.DoBattle(player, monster);
+
+                            if (monster.Life <= 0) { }
+
                             break;
                         case '2':
                             Console.WriteLine("Run Away!!");
