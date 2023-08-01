@@ -25,6 +25,8 @@ namespace DungeonApp
             Weapon guitarPickThrowingStars = new("Guitar Pick Throwing Stars", 1, 8, 10, true, WeaponType.GuitarPickThrowingStars);
             Weapon toothpicks = new("Toothpicks", 1, 8, 10, true, WeaponType.Toothpicks);
 
+            
+
 
             //Potential expansion - Let the user choose the name and race.
             Player player = new("Child", Race.HumanChild, yoyo);
@@ -67,7 +69,9 @@ namespace DungeonApp
                             Console.WriteLine("Attack!");
                             reload = Combat.DoBattle(player, monster);
 
-                            if (monster.Life <= 0) { }
+                            if (monster.Life <= 0) {
+                                Console.WriteLine("You killed: " + monster);
+                            }
 
                             break;
                         case '2':
@@ -81,6 +85,7 @@ namespace DungeonApp
                             Console.WriteLine("Player info: ");
                             //print player details to the screen
                             Console.WriteLine(player);
+                            Console.WriteLine("Monster defeated" + player.Score);
                             break;
 
                         case '4':
@@ -96,7 +101,7 @@ namespace DungeonApp
                             break;
 
                         default:
-                            Console.WriteLine("Do you think this is a game?? Quit playing around!");//TODO Change verbage & figure out what this is linked to. 
+                            Console.WriteLine("Wrong Input, please try again!"); 
                             break;
                     }//end switch
                     #endregion
@@ -110,11 +115,13 @@ namespace DungeonApp
 
             #region Exit
             //TODO output the final score
-            //Console.WriteLine();
-            int finalScore = 100;
-            Console.WriteLine($"Final Score: {finalScore}");
+            Console.WriteLine("Player Score: " + player.Score);
+           
 
             #endregion
+
+            
+
         }//End Main()
 
         private static string GetRoom()

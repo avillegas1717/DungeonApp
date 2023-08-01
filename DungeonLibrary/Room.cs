@@ -28,7 +28,7 @@ namespace DungeonLibrary
         //    ChildsBedroom = childsBedroom;
         //    Basement = basement;
 
-        }
+        //}
 
         //METHODS - Monkeys
         //TODO create methods
