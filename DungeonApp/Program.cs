@@ -1,4 +1,7 @@
 ﻿using DungeonLibrary;
+using System.Diagnostics.Metrics;
+using System.Reflection.Metadata;
+using System.Xml.Linq;
 
 namespace DungeonApp
 {
@@ -11,11 +14,12 @@ namespace DungeonApp
             Console.WriteLine("Hello Adventurer! Welcome to the whimsical world of Tiny Tails: " +
                 "Adventures in Tangerine Town! Where furry fighters engage in epic battles as they clash for " +
                 "dominance in an unforgettable adventure!");
-                
+
             #endregion
 
 
             #region Player Creation
+            Player player;
             //Player Creation, after we've learned how to create custom Datatypes.
             //Reference the notes in the TestHarness for some ideas of how to expand player creation.
 
@@ -25,11 +29,23 @@ namespace DungeonApp
             Weapon guitarPickThrowingStars = new("Guitar Pick Throwing Stars", 1, 8, 10, true, WeaponType.GuitarPickThrowingStars);
             Weapon toothpicks = new("Toothpicks", 1, 8, 10, true, WeaponType.Toothpicks);
 
-            
+            List<Weapon> weps = new() { yoyo, slinky, guitarPickThrowingStars, toothpicks };            weps.ForEach(w => Console.WriteLine($"{weps.IndexOf(w) + 1}) {w.Name}"));            Console.Write("Make your selection: ");            int.TryParse(Console.ReadLine(), out int wepIndex);            Weapon userWeapon = weps[wepIndex - 1];
 
 
             //Potential expansion - Let the user choose the name and race.
-            Player player = new("Child", Race.HumanChild, yoyo);
+            //Recommend you let the user select their own name using a Console.ReadLine() 
+            //let the user pick their weapon using the provided code.
+
+            //Accept the input using Console.ReadLine()
+            //Assign the results of the Console.ReadLine() into a variable
+            //prompt the user to enter their name using Console.Write()
+            //Pass that variable into the "name" parameter in your player constructor.
+            Console.Write("Please enter a name for your player: ");
+            string name;
+            name = Console.ReadLine();
+
+
+            player = new(name, Race.Dog, userWeapon);
 
             player.Score = 0;//initialized to zero by default. This just adds readability.
             #endregion
@@ -69,7 +85,8 @@ namespace DungeonApp
                             Console.WriteLine("Attack!");
                             reload = Combat.DoBattle(player, monster);
 
-                            if (monster.Life <= 0) {
+                            if (monster.Life <= 0)
+                            {
                                 Console.WriteLine("You killed: " + monster);
                             }
 
@@ -101,7 +118,7 @@ namespace DungeonApp
                             break;
 
                         default:
-                            Console.WriteLine("Wrong Input, please try again!"); 
+                            Console.WriteLine("Wrong Input, please try again!");
                             break;
                     }//end switch
                     #endregion
@@ -116,11 +133,11 @@ namespace DungeonApp
             #region Exit
             //TODO output the final score
             Console.WriteLine("Player Score: " + player.Score);
-           
+
 
             #endregion
 
-            
+
 
         }//End Main()
 
@@ -128,10 +145,10 @@ namespace DungeonApp
         {
             string[] rooms =
             {
-                "1", 
-                "2", 
-                "3", 
-                "4", 
+                "1",
+                "2",
+                "3",
+                "4",
                 "5"
             };
 
